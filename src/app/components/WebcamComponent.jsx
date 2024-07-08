@@ -1,8 +1,8 @@
-'use client'
-
+"use client";
 
 import React, { useRef, useState } from "react";
 import Webcam from "react-webcam";
+import Button from "./Button";
 
 const WebcamComponent = () => {
   const webcamRef = useRef(null);
@@ -30,7 +30,13 @@ const WebcamComponent = () => {
         width={1280}
         videoConstraints={videoConstraints}
       />
-      <button onClick={capture}>Capture Photo</button>
+      <Button
+        onClick={capture}
+        title="Capture Photo"
+        variant="primary"
+        size="md"
+      />
+      <button></button>
       {imageSrc && (
         <div>
           <h2>Captured Photo:</h2>
