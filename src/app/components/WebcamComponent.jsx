@@ -20,23 +20,24 @@ const WebcamComponent = () => {
   };
 
   return (
-    <div>
-      <h1>Webcam</h1>
+    <div className="">
       <Webcam
         audio={false}
         height={720}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        width={1280}
+        width={780}
         videoConstraints={videoConstraints}
+        className="sm:w-68"
       />
-      <Button
-        onClick={capture}
-        title="Capture Photo"
-        variant="primary"
-        size="md"
-      />
-      <button></button>
+      <div className="flex justify-center mt-4">
+        <Button
+          onClick={capture}
+          title="Capture Photo"
+          variant="primary"
+          size="md"
+        />
+      </div>
       {imageSrc && (
         <div>
           <h2>Captured Photo:</h2>
