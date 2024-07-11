@@ -9,16 +9,16 @@ export default function Home() {
       <p className="text-center text-2xl">
         Welcome to <span className="italic">shotMe</span>
       </p>
-      <div>
+      <div className="flex gap-4">
         <Link href="/picture" className="">
-          <FaCamera className="w-60 h-60 text-amber-900 hover:animate-ping" />
+          <FaCamera className="size-60 text-amber-900 hover:animate-ping" />
           <p className="inline-flex items-center gap-1 font-medium mt-2">
             Click here to take your shot! <IoIosArrowForward />
           </p>
         </Link>
-        <Link href="/picture" className="">
-          <BsFillCameraReelsFill className="w-60 h-60 text-amber-900 hover:animate-ping" />
-          <p className="inline-flex items-center gap-1 font-medium mt-3">
+        <Link href="/video" className="">
+          <BsFillCameraReelsFill className="size-56 text-amber-900 hover:animate-ping" />
+          <p className="inline-flex items-center gap-1 font-medium mt-6">
             Click here to record a video! <IoIosArrowForward />
           </p>
         </Link>
