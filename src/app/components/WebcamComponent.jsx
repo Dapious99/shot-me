@@ -19,6 +19,18 @@ const WebcamComponent = () => {
     setImageSrc(imageSrc);
   };
 
+  const saveImage = () => {
+    if (imageSrc) {
+      const timestamp = new Date().toISOString().replace(/[:.]/g, "-"); // Generate a timestamp
+      const fileName = `capturedwithshotme-${timestamp}.jpg`; // Create file name with timestamp
+
+      const link = document.createElement("a");
+      link.href = imageSrc;
+      link.download = fileName;
+      link.click();
+    }
+  };
+
   return (
     <div className="">
       <Webcam
@@ -41,7 +53,15 @@ const WebcamComponent = () => {
       {imageSrc && (
         <div>
           <h2>Captured Photo:</h2>
-          <img src={imageSrc} alt="Captured" />
+          <img src={imageSrc} alt="Captured" style={{ maxWidth: "100%" }} />
+          <div className="flex justify-center mt-4">
+            <Button
+              onClick={saveImage}
+              title="Save to Device"
+              variant="primary"
+              size="md"
+            />
+          </div>
         </div>
       )}
     </div>
